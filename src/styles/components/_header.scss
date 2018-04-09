@@ -17,9 +17,9 @@ $header-border: thin solid rgba(255, 255, 255, .2);
 }
 .c-header__menu {
     display: flex;
-    flex: 1;
     line-height: 60px;
     .menu__link {
+        position: relative;
         text-align: center;
         color: $white;
         text-decoration: none;
@@ -27,26 +27,43 @@ $header-border: thin solid rgba(255, 255, 255, .2);
             color: $white;
         }
     }
+    .menu__dropdown {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        padding: 2rem;
+        background: $white;
+    }
     .menu__link--icon {
         height: 60px;
-        width: 33.3333333%;
-        border-right: $header-border;
+        width: 60px;
     }
-    .menu__link--hamburger {
-        width: 66.6666666%;
+    .shoppingCart {
         position: relative;
-        span {
-            font-size: .4rem;
-            line-height: normal;
-        }
     }
+    .shoppingCart__label {
+        background: $pink;
+        border-radius: 100%;
+        line-height: 1.4rem;
+        vertical-align: middle;
+        font-size: 1.2rem;
+        font-weight: bold;
+        position: absolute;
+        height: 1.4rem;
+        width: 1.4rem;
+        top: 1rem;
+        right: 1rem;
+    }
+
 }
 .c-header__title {
-    flex: 5;
-    font-size: 1rem;
+    text-align: center;
+    flex: 1;
     border-left: $header-border;
     border-right: $header-border;
     h3 {
+        font-size: 2rem;
         margin: 0;
     }
 }

@@ -1,9 +1,16 @@
 /*================ General layout styles ================*/
+html {
+    font-size: 62.5%;
+}
 body,
 html {
   background-color: $color-body;
-  font-size: 65%;
+
   font-family: helvetica;
+}
+body {
+    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 .page-width {
