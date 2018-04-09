@@ -51,4 +51,10 @@ $(document).ready(function() {
   if (slate.cart.cookiesEnabled()) {
     document.documentElement.className = document.documentElement.className.replace('supports-no-cookies', 'supports-cookies');
   }
+  $('.js-menuDropdown').click(function(e) {
+      const menu = $(this).siblings('.menu__dropdown');
+
+      menu.toggleClass('is--open');
+
+  })
 });

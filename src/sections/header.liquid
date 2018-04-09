@@ -1,30 +1,32 @@
 
 <div data-section-id="{{ section.id }}" data-section-type="header-section" class="c-header">
     <div class="c-header__menu c-header__menu--left">
-        <a href="#" class="menu__link menu__link--icon">
+        <a href="#" class="menu__link menu__link--icon js-menuDropdown">
             {% include 'icon-hamburger' %}
         </a>
         <ul class="menu__dropdown">
-          {% if customer %}
-            <li>
-              {% if customer.first_name != blank %}
-                {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
-                {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+            {% for link in linklists[section.settings.main_linklist].links %}
+              {%- assign child_list_handle = link.title | handleize -%}
+              {% if menus[child_list_handle].links != blank %}
+                <li class="site-nav--has-submenu{% if link.active %} site-nav--active{% endif %}">
+                  <a href="{{ link.url }}" class="site-nav__link">
+                    {{ link.title }}
+                    {% include 'icon-arrow-down' %}
+                  </a>
+                  <ul class="site-nav__submenu">
+                    {% for childlink in menus[child_list_handle].links %}
+                      <li {% if childlink.active %}class="site-nav--active"{% endif %}>
+                        <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </li>
               {% else %}
-                <a href="/account">{{ 'layout.customer.account' | t }}</a>
+                <li {% if link.active %}class="site-nav--active"{% endif %}>
+                  <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+                </li>
               {% endif %}
-            </li>
-            <li>
-              {{ 'layout.customer.log_out' | t | customer_logout_link }}
-            </li>
-          {% else %}
-            <li>
-              {{ 'layout.customer.log_in' | t | customer_login_link }}
-            </li>
-            <li>
-              {{ 'layout.customer.create_account' | t | customer_register_link }}
-            </li>
-          {% endif %}
+            {% endfor %}
         </ul>
     </div>
     <div class="c-header__title">
@@ -61,28 +63,7 @@
 
   <!-- <nav role="navigation">
     <ul class="site-nav">
-      {% for link in linklists[section.settings.main_linklist].links %}
-        {%- assign child_list_handle = link.title | handleize -%}
-        {% if menus[child_list_handle].links != blank %}
-          <li class="site-nav--has-submenu{% if link.active %} site-nav--active{% endif %}">
-            <a href="{{ link.url }}" class="site-nav__link">
-              {{ link.title }}
-              {% include 'icon-arrow-down' %}
-            </a>
-            <ul class="site-nav__submenu">
-              {% for childlink in menus[child_list_handle].links %}
-                <li {% if childlink.active %}class="site-nav--active"{% endif %}>
-                  <a href="{{ childlink.url }}" class="site-nav__link">{{ childlink.title | escape }}</a>
-                </li>
-              {% endfor %}
-            </ul>
-          </li>
-        {% else %}
-          <li {% if link.active %}class="site-nav--active"{% endif %}>
-            <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
-          </li>
-        {% endif %}
-      {% endfor %}
+
     </ul>
   </nav> -->
 </div>

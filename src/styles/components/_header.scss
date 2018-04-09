@@ -29,11 +29,30 @@ $header-border: thin solid rgba(255, 255, 255, .2);
     }
     .menu__dropdown {
         position: absolute;
-        bottom: 0;
+        list-style: none;
+        width: 200px;
+        top: 60px;
         left: 0;
         margin: 0;
-        padding: 2rem;
-        background: $white;
+        padding: 0;
+        background: $blue;
+        border-top: $header-border;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        &.is--open {
+            opacity: 1;
+        }
+        a {
+            display: inline-block;
+            width: 100%;
+            color: $white;
+            text-decoration: none;
+            padding: .5rem;
+            transition: background-color .2s ease-in-out ;
+            &:hover {
+                background: $blue-light;
+            }
+        }
     }
     .menu__link--icon {
         height: 60px;
