@@ -1,12 +1,28 @@
-<style>
-  {% if section.settings.logo != blank %}
-    .site-header__logo-image {
-      max-width: {{ section.settings.logo_max_width }}px;
-    }
-  {% endif %}
-</style>
-<div data-section-id="{{ section.id }}" data-section-type="header-section">
-  <header role="banner">
+
+<div data-section-id="{{ section.id }}" data-section-type="header-section" class="c-header">
+    <div class="c-header__menu c-header__menu--left">
+        <a href="#" class="menu__link menu__link--icon">
+                <i class="fa fa-search"></i>
+            </a>
+        <a href="#" class="menu__link menu__link--hamburger">
+                <i class="fa fa-bars"></i>
+                <span>select <strong>Category</strong></span>
+            </a>
+    </div>
+    <div class="c-header__title u-text-align-center">
+        <h3>Fancy Shop</h3>
+    </div>
+    <div class="c-header__menu c-header__menu--right">
+        <a href="#" class="menu__link menu__link--icon">
+                <i class="fa fa-user"></i>
+            </a>
+        <a href="#" class="menu__link menu__link--icon">
+                <i class="fa fa-heart"></i>
+        </a>
+        <a href="#" class="menu__link menu__link--icon">
+            <i class="fa fa-shopping-cart"></i>
+        </a>
+    </div>
     {% if template.name == 'index' %}
       <h1 itemscope itemtype="http://schema.org/Organization">
     {% else %}
@@ -35,7 +51,7 @@
       ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
     </a>
 
-    {% if shop.customer_accounts_enabled %}
+    <!-- {% if shop.customer_accounts_enabled %}
       <ul>
         {% if customer %}
           <li>
@@ -58,9 +74,9 @@
           </li>
         {% endif %}
       </ul>
-    {% endif %}
+    {% endif %} -->
 
-    <form action="/search" method="get" role="search">
+    <!-- <form action="/search" method="get" role="search">
       <label for="Search" class="label-hidden">
         {{ 'general.search.placeholder' | t }}
       </label>
@@ -73,9 +89,7 @@
         {% include 'icon-search' %}
         <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
       </button>
-    </form>
-
-  </header>
+    </form> -->
 
   <nav role="navigation">
     <ul class="site-nav">

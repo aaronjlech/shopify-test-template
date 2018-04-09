@@ -3,5 +3,8 @@
   "version": "0.0.1",
   "devDependencies": {
     "@shopify/slate-tools": "0.13.0"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0"
   }
 }

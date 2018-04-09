@@ -11,6 +11,7 @@
 @import url('settings/variables.scss.liquid');
 
 /*================ COMMON ================*/
+@import url('global/variables.scss');
 @import url('global/normalize.scss');
 @import url('global/slate-reset.scss');
 @import url('global/helper-classes.scss');
@@ -26,3 +27,6 @@
 /*================ MODULES ================*/
 @import url('modules/site-header.scss');
 @import url('modules/gift-card-template.scss');
+
+/*================ COMPONENTS ================*/
+@import url('components/_header.scss');
