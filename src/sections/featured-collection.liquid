@@ -1,7 +1,3 @@
-{% if section.settings.title != blank %}
-  <h2>{{ section.settings.title | escape }}</h2>
-{% endif %}
-
 {%- assign collection = collections[section.settings.collection] -%}
 
 {% for product in collection.products limit: 6 %}

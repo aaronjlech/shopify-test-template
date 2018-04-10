@@ -1,0 +1,22 @@
+.c-breadcrumbs {
+    background: $blue;
+    color: $white;
+    text-align: center;
+    padding: 4rem 0;
+    h1 {
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+    .c-breadcrumbs__link {
+        color: $white;
+        opacity: .7;
+        text-decoration: none;
+        transition: opacity .6s ease-in-out;
+        &:visited {
+            color: $white;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

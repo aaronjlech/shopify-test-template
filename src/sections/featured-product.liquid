@@ -29,11 +29,6 @@
     </ul>
   {% endif %}
 
-  <h1>{{ product.title | default: onboarding_title }}</h1>
-  {% if product.vendor != blank %}
-    <p>{{ product.vendor }}</p>
-  {% endif %}
-
   <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
     <meta itemprop="priceCurrency" content="{{ shop.currency }}">
     <meta itemprop="price" content="{{ product.price | divided_by: 100.00 }}">

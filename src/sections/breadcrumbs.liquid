@@ -1,5 +1,6 @@
-<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
-  <a href="/" title="Home">Home</a>
+<div class="c-breadcrumbs" role="navigation" aria-label="breadcrumbs">
+    <h1>{{ page_title }}</h1>
+  <a href="/" title="Home" class="c-breadcrumbs__link">Home</a>
   {% if template contains 'page' %}
     <span aria-hidden="true">&rsaquo;</span>
     <span>{{ page.title }}</span>
@@ -38,4 +39,4 @@
    <span aria-hidden="true">&rsaquo;</span>
    <span>{{ page_title }}</span>
   {% endif %}
-</nav>
+</div>

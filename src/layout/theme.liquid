@@ -67,7 +67,10 @@
 
   {% section 'header' %}
   <main role="main" id="MainContent">
-      {% section 'breadcrumbs' %}
+      {% if page_title != shop.name %}
+        {% section 'breadcrumbs' %}
+      {% endif %}
+
     {{ content_for_layout }}
   </main>
 
