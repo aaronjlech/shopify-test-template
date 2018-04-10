@@ -1,3 +1,15 @@
-.c-shopping-cart {
-
+.c-cart {
+    $table-border: solid 1px $gray;
+    color: $gray;
+    padding: 6rem 4rem;
+    .cart__empty-msg {
+        color: $gray;
+        font-weight: bold;
+    }
+    .cart__table {
+        border: $table-border;
+    }
+    tr {
+        border-bottom: $table-border;
+    }
 }

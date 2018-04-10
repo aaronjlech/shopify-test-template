@@ -1,6 +1,7 @@
+<div class="c-cart">
 {% if cart.item_count > 0 %}
   <form action="/cart" method="post" novalidate>
-    <table class="c-cart">
+    <table class="responsive-table cart__table">
       <thead class="c-cart__heading">
         <tr>
           <th colspan="2">{{ 'cart.label.product' | t }}</th>
@@ -104,14 +105,12 @@
     <input type="submit" name="checkout" class="btn" value="{{ 'cart.general.checkout' | t }}">
   </form>
 {% else %}
-  <h1>{{ 'cart.general.title' | t }}</h1>
-
   {% comment %}
   Cart empty state
   {% endcomment %}
   <div class="supports-cookies">
-    <p>{{ 'cart.general.empty' | t }}</p>
-    <p>{{ 'cart.general.continue_browsing_html' | t }}</p>
+    <p  class="cart__empty-msg">{{ 'cart.general.empty' | t }}</p>
+    <a href="javascript:history.back()" class="c-button">Return To Shop</a>
   </div>
 
   {% comment %}
@@ -124,3 +123,4 @@
     <p>{{ 'cart.general.cookies_required' | t }}</p>
   </div>
 {% endif %}
+</div>
