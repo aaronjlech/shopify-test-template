@@ -38,9 +38,11 @@ $header-border: thin solid rgba(255, 255, 255, .2);
         background: $blue;
         border-top: $header-border;
         opacity: 0;
+        visibility: hidden;
         transition: opacity .3s ease-in-out;
         &.is--open {
             opacity: 1;
+            visibility: visible;
         }
         a {
             display: inline-block;
