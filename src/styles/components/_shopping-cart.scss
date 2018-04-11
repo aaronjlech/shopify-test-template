@@ -7,9 +7,20 @@
         font-weight: bold;
     }
     .cart__table {
-        border: $table-border;
+        // border: $table-border;
+        border-collapse: collapse;
+        text-align: center;
+        width: 100%;
+        thead {
+            // border-bottom: $table-border;
+            th {
+                padding-bottom: 2rem;
+            }
+        }
+        tr {
+            border-bottom: $table-border;
+            text-align: center;
+        }
     }
-    tr {
-        border-bottom: $table-border;
-    }
+
 }
