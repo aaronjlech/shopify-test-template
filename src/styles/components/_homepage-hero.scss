@@ -1,0 +1,14 @@
+.c-hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center -60px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+.c-hero__content {
+    color: $white;
+    z-index: 1;
+}

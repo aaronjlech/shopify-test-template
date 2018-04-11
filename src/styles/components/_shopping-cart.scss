@@ -11,16 +11,28 @@
         border-collapse: collapse;
         text-align: center;
         width: 100%;
+        img {
+            max-width: 100px;
+            height: auto;
+        }
         thead {
             // border-bottom: $table-border;
             th {
                 padding-bottom: 2rem;
             }
         }
+        tbody {
+            td {
+                padding: 2rem .8rem;
+            }
+        }
         tr {
             border-bottom: $table-border;
             text-align: center;
         }
+    }
+    .item__total {
+        color: $blue;
     }
 
 }
