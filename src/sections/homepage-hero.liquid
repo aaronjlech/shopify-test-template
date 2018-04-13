@@ -21,7 +21,7 @@
         "type": "text",
         "id": "sub-title",
         "label": "Sub Heading",
-        "default": ""
+        "default": "Sub Title"
     },
     {
         "type": "image_picker",
@@ -66,7 +66,7 @@
         background: rgba(50, 50, 50, 0.4);
     }
     {% endif %}
-    @media only screen and (min-width: 640px) {
+    @media only screen and (min-width: 768px) {
         .c-hero {
             background-image: url('{{ section.settings.image-desktop | img_url: "master" }}');
         }

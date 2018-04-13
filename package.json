@@ -5,6 +5,7 @@
     "@shopify/slate-tools": "0.13.0"
   },
   "dependencies": {
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "shopify-cartjs": "^0.4.1"
   }
 }
